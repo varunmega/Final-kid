@@ -4,14 +4,15 @@
   },
   "build": {
     "production": {
-      "android": {
-        "workflow": "managed"
-      }
+      "developmentClient": false,
+      "distribution": "store"
     },
     "preview": {
-      "android": {
-        "workflow": "managed"
-      }
+      "developmentClient": true,
+      "distribution": "internal"
     }
+  },
+  "submit": {
+    "production": {}
   }
 }
