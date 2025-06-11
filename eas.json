@@ -1,7 +1,7 @@
 {
   "cli": {
     "version": ">= 3.0.0",
-    "appProjectId": "7b264b7d-926e-49bd-9937-e5fedd7d8be6"
+    "appVersionSource": "local"
   },
   "build": {
     "production": {
