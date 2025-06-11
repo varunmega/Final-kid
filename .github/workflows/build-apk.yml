@@ -1,4 +1,4 @@
-name: Build APK for KiddyBot
+name: Build APK
 
 on:
   push:
@@ -7,7 +7,6 @@ on:
 
 jobs:
   build:
-    name: Build APK
     runs-on: ubuntu-latest
 
     steps:
@@ -23,15 +22,9 @@ jobs:
         run: npm install -g eas-cli
 
       - name: Authenticate with Expo
-        env:
-          EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
-        run: eas whoami || eas login --token $EXPO_TOKEN
+        run: eas whoami || eas login --token ${{ secrets.EXPO_TOKEN }}
 
       - name: Build APK
         run: eas build --platform android --non-interactive --profile preview
-
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: kiddybot-apk
-          path: dist/*.apk
+        env:
+          EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
