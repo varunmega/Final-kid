@@ -1,16 +1,18 @@
 {
+  "cli": {
+    "version": ">= 4.0.0"
+  },
   "build": {
-    "development": {
-      "developmentClient": true,
-      "distribution": "internal"
-    },
     "preview": {
+      "developmentClient": false,
       "distribution": "internal"
     },
     "production": {
-      "android": {
-        "buildType": "apk"
-      }
+      "developmentClient": false,
+      "distribution": "store"
     }
+  },
+  "submit": {
+    "production": {}
   }
 }
