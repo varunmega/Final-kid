@@ -1,0 +1,33 @@
+{
+  "expo": {
+    "name": "KiddyBot",
+    "slug": "final-kid",
+    "scheme": "kiddybot",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "package": "com.kiddybot.finalkid",
+      "versionCode": 1,
+      "permissions": []
+    },
+    "owner": "mvk444",
+    "extra": {
+      "eas": {
+        "projectId": "7b264b7d-926e-49bd-9937-e5fedd7d8be6"
+      }
+    }
+  }
+}
