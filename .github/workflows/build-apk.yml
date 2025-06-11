@@ -1,33 +1,28 @@
-name: Build APK
+name: Build KiddyBot APK
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
 
 jobs:
   build:
-    name: Build APK with Expo
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
+      - name: 🧱 Install Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: 18
 
-      - name: Install EAS CLI
-        run: npm install -g eas-cli
+      - name: ⚙️ Install dependencies
+        run: npm install
 
-      - name: Check current directory and list contents
-        run: |
-          pwd
-          ls -al
+      - name: 🧪 Run Expo Prebuild (optional)
+        run: npx expo prebuild
 
-      - name: Build APK with Expo
-        run: eas build --platform android --non-interactive --profile preview
+      - name: 🚀 Build with EAS
+        run: npx eas-cli build --platform android --non-interactive
         env:
           EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
