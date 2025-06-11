@@ -22,8 +22,12 @@ jobs:
       - name: Install EAS CLI
         run: npm install -g eas-cli
 
+      - name: Check current directory and list contents
+        run: |
+          pwd
+          ls -al
+
       - name: Build APK with Expo
-        working-directory: ./Final-kid
         run: eas build --platform android --non-interactive --profile preview
         env:
           EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
