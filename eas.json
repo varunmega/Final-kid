@@ -1,18 +1,22 @@
 {
   "cli": {
-    "version": ">=3.13.0",
-    "appVersion": {
-      "source": "local"
-    }
+    "version": ">=3.13.0"
   },
   "build": {
-    "android": {
-      "workflow": "managed",
-      "releaseChannel": "default",
-      "developmentClient": false
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal"
+    },
+    "preview": {
+      "distribution": "internal",
+      "android": {
+        "buildType": "apk"
+      }
+    },
+    "production": {
+      "android": {
+        "buildType": "apk"
+      }
     }
-  },
-  "submit": {
-    "android": {}
   }
 }
