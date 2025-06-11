@@ -21,10 +21,7 @@ jobs:
       - name: Install EAS CLI
         run: npm install -g eas-cli
 
-      - name: Authenticate with Expo
-        run: eas whoami || eas login --token ${{ secrets.EXPO_TOKEN }}
-
-      - name: Build APK
+      - name: Build APK with Expo
         run: eas build --platform android --non-interactive --profile preview
         env:
           EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
